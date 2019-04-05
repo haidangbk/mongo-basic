@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>List User</title>
+</head>
+<body>
+	<div th:each="user : ${users}">
+		<div th:text="${user.name}"></div>
+		<div th:text="${user.age}"></div>
+		<div th:text="${user.address}"></div>
+		<a th:text="#{detail}" th:href="@{/detail-user?id=}+${user._id}"></a>
+		<a th:text="#{update}" th:href="@{/update-user?id=}+${user._id}"></a>
+	</div>
+</body>
+</html>
